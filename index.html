@@ -139,7 +139,7 @@
     <p class="w3-justify">
       Actually, a diversity of influential machine learning approaches have already been applied across all the major sub-domains of Earth 
       system science and are increasingly being integrated into operational schemes and being used to discover patterns, to improve our 
-      understanding and to evaluate comprehensive physical models <a href="https://www.nature.com/articles/s41586-019-0912-1." target="_blank">(Reichstein et al., 2019)</a>. 
+      understanding and to evaluate comprehensive physical models (<a href="https://www.nature.com/articles/s41586-019-0912-1." target="_blank">Reichstein et al., 2019</a>). 
       I have done several related projects in CUG including rainfall-runoff prediction and water quality prediction with long-short term memory (LSTM) in Haihe River Basin, 
       Huangshui River Basin, and Yangtze River Basin between 2019 to 2022. Currently, I attempt to break through <span style="color:red">accuracy-interpretability 
         dilemma</span> of deep learning. I am concentrating on  <span style="color:red">Physics-guided Deep Learning (PGDL)</span>, which combines physics laws and deep learning to 
@@ -153,21 +153,31 @@
         (This skatch is revised based on <a style="color: #447ec9" href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2020GL088229" target="_blank">Jiang et al., 2020</a>)
         </p>
         <p class="w3-justify">
-        I would like to say, <span style="color:red">AdderNet is very cool!</span> The initial idea was came up in about 2017 when climbing with some friends at Beijing. By replacing all convolutional layers (except the first and the last layers), we now can obtain comparable performance on ResNet architectures. In addition, to make the story more complete, we recent release the hardware implementation and some quantization methods. The results are quite encouraging, we can reduce both <strong>the energy consumption and thecircuit areas significantly without affecting the performance</strong>. Now, we are working on more applications to reduce the costs of launching AI algorithms such as low-level vision, detection, and NLP tasks.
+        Considering the respective merits of physical approaches and AI models, the synergy of the two paradigms has recently been envisioned as an attractive 
+        research topic in the geoscience community (<a href="https://dl.acm.org/doi/10.1145/3192335" target="_blank">Gil et al., 2019</a>).<br>
+        Here, we consider three different hybrid strategies: a) <span style="color:red">pre-process</span>: AI models learn and output the parameters of physical models, 
+        then physical models output the simulation; <span style="color:red">post-process</span>: physical models are calibrated and output the initial simulated runoff, 
+        then AI models eliminates the gap between the simulation of physical models and the observation, and output the final simulation; 
+        c) <span style="color:red">structure-coupled</span>: physical laws are fused into the structures of AI models, then the mixed models output simulation.<br>
+        Different hybrid models are developed and compared to find out the most appropriate hybrid strategy for different application problems, such as hydrology prediction.
         </p> 
 
         <h4><li>Rainfall-runoff Prediction</li></h4>
-        <img style="width:96%;" src="images/RRP.jpg"> 
+        <img style="width:100%;" src="images/RRP.jpg"> 
         <p class="w3-justify">
         <a style="color: #447ec9" href="https://github.com/Bennett1998/Rainfall-runoff-prediction/" target="_blank">Project Page</a> | <a style="color: #447ec9" href="" target="_blank">Paper</a>
         </p>
         <p class="w3-justify">
-        The initial verison of GhostNet was accepted by CVPR 2020, which achieved SOTA performance on ImageNet: <span style="color:red">75.7%</span> top1 acc with only <span style="color:red">226M FLOPS</span>. In the current version, we release a series computer vision models (e.g. int8 quantization, detection, and larger networks) on <strong>MindsSpore 1.0</strong> and <strong>Mate 30 Pro (Kirin 990)</strong>.
+         In this study, both process-based model (EXPHYDRO in this study) and data-driven model (LSTM in this study) are utilized to predict runoff with CAMELS 
+         dataset. Results indicate that LSTM has better accuracy (mean NSE of <span style="color:red">0.77</span>), which mean NSE of EXPHYDRO is <span style="color:red">0.71</span>. <br>
+         Furthermore, we carried out some interesting experiments: a) <strong>LSTM-EXPHYDRO</strong>: the LSTM learns and outputs the parameters of the EXPHYDR, then the EXPHYDRO outputs
+         the simulated runoff; b) <strong>EXPHYDRO-LSTM</strong>: the EXPHYDRO is calibrated and outputs the initial simulated runoff, then the LSTM eliminates the gap between the EXPHYDRO 
+         simulation and observation, and outputs the final simulated runoff. <strong>Preliminary experiments shows that EXPHYDRO-LSTM has better performance than LSTM-EXPHYDRO.</strong>
         </p> 
 
         <h4><li>Water Quality (WQ) Prediction with LSTM</li></h4>
         <!-- <img style="width:32%;" src="images/atlas200.png"> &nbsp&nbsp <img style="width:60%;" src="images/video.gif"> -->
-        <img style="width:46%;" src="images/WQPa.jpg"> &nbsp&nbsp <img style="width:46%;" src="images/WQPb.jpg">
+        <img style="width:48%;" src="images/WQPa.jpg"> &nbsp&nbsp <img style="width:48%;" src="images/WQPb.jpg">
 
         <p class="w3-justify">
         <a style="color: #447ec9" href="https://github.com/Bennett1998/LSTM-performance-related" target="_blank">Project Page</a> | <a style="color: #447ec9" href="" target="_blank">Paper</a>
