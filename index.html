@@ -169,7 +169,7 @@
         </p>
         <p class="w3-justify">
          In this study, both process-based model (EXPHYDRO in this study) and data-driven model (LSTM in this study) are utilized to predict runoff with CAMELS 
-         dataset. Results indicate that LSTM has better accuracy (mean NSE of <span style="color:red">0.77</span>), which mean NSE of EXPHYDRO is <span style="color:red">0.71</span>. <br>
+         dataset. Results indicate that LSTM has better accuracy (mean NSE of <span style="color:red">0.77</span>), while mean NSE of EXPHYDRO is <span style="color:red">0.71</span>. <br>
          Furthermore, we carried out some interesting experiments: a) <strong>LSTM-EXPHYDRO</strong>: the LSTM learns and outputs the parameters of the EXPHYDR, then the EXPHYDRO outputs
          the simulated runoff; b) <strong>EXPHYDRO-LSTM</strong>: the EXPHYDRO is calibrated and outputs the initial simulated runoff, then the LSTM eliminates the gap between the EXPHYDRO 
          simulation and observation, and outputs the final simulated runoff. <strong>Preliminary experiments shows that EXPHYDRO-LSTM has better performance than LSTM-EXPHYDRO.</strong>
